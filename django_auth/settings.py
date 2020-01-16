@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +26,7 @@ SECRET_KEY = '3yjq(gwa(2^e&so1+l^((-5$j6(+-yz-cut284enh3dyqmf%c2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get("C9_HOSTNAME"),'5a62201873aa4d76a07c234388cac370.vfs.cloud9.us-east-1.amazonaws.com']
+ALLOWED_HOSTS = ["localhost"]
 
 
 # Application definition
