@@ -1,5 +1,140 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3>Welcome to my AuthenticateMe web application.</h3>
-<p>I'm learning how to build functionality that will allow users to register, login and logout of web applications.</p>
+<!-- About -->
+  <section class="content-section bg-light" id="about">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2>Get Your Web Site Build At An Amazing Price</h2>
+          <p class="lead mb-5">Let's create a Website user friendly, Mobile compatible For happy costumers!</p>
+          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="content-section bg-primary text-white text-center" id="services">
+    <div class="container">
+      <div class="content-section-heading">
+        <h3 class="text-secondary mb-0">Services</h3>
+        <h2 class="mb-5">What We Offer</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-screen-smartphone"></i>
+          </span>
+          <h4>
+            <strong>Responsive</strong>
+          </h4>
+          <p class="text-faded mb-0">Looks great on any screen size!</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-pencil"></i>
+          </span>
+          <h4>
+            <strong>Redesigned</strong>
+          </h4>
+          <p class="text-faded mb-0">Freshly redesigned,  costum made, or  Bootstrap Templates.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="fa fa-like"></i>
+          </span>
+          <h4>
+            <strong>Favorited</strong>
+          </h4>
+          <p class="text-faded mb-0">Website updates and maintanace 
+            <i class="fa fa-heart"></i>
+            To keep your wabe page up to date</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="fa fa-mustache"></i>
+          </span>
+          <h4>
+            <strong>Dbug website </strong>
+          </h4>
+          <p class="text-faded mb-0">Lest make sure your website works</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Callout -->
+  <section class="callout">
+    <div class="container text-center">
+      <h2 class="mx-auto mb-5">Welcome to future 
+        <em>your</em>
+        next website!</h2>
+      <a class="btn btn-primary btn-xl" href="">Make It happen Now!</a>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="content-section" id="portfolio">
+    <div class="container">
+      <div class="content-section-heading text-center">
+        <h3 class="text-secondary mb-0">Portfolio</h3>
+        <h2 class="mb-5">Recent Projects</h2>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="https://los-pochocolos.herokuapp.com/">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Los Pochocolos</h2>
+                <p class="mb-0">A  Tourist website for a Hotel on North Colombia!</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="../static/img/portfolio-1.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Task Manager Aplication</h2>
+                <p class="mb-0">A aplication where you can plan and update you daily tasks</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="../static/img/portfolio-2.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Travel Blog</h2>
+                <p class="mb-0">If you wish to document all your travels and experiances!</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="../static/img/portfolio-3.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Blog</h2>
+                <p class="mb-0">You wish to create a multy user Blog so that a group can shere the experiances</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="../static/img/portfolio-4.jpg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="content-section bg-primary text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">The buttons below are impossible to resist...</h2>
+      <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
+      <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
+    </div>
+  </section>
 {% endblock %}
