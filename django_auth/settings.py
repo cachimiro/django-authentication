@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
     'accounts',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -119,6 +120,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+MEDIA_URL = '/images/'
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 

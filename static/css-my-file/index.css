@@ -8,4 +8,10 @@ margin-top: 50px;
 background-color: #c9c9ca;
 height: 46px;
  }
- 
+ #register{
+     margin-top: 50px;
+     text-align: center;
+ }
+  #map {
+            min-height: 360px;
+        }
