@@ -18,10 +18,16 @@ from django.contrib import admin
 from accounts.views import index
 from accounts import urls as accounts_urls
 from products import urls as products_urls
+from cart import urls as cart_urls
+from search import urls as urls_search
+from checkout import urls as checkout_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name="index"),
     url(r'^accounts/', include(accounts_urls)),
-    url(r'^products/', include(products_urls))
+    url(r'^products/', include(products_urls)),
+    url(r'^cart/', include(cart_urls)),
+    url(r'^search/', include(urls_search)),
+    url(r'^checkout/', include(checkout_urls)),
 ]
