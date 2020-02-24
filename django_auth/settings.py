@@ -23,7 +23,7 @@ SECRET_KEY = '6rta5@qrc4v7@%nuizck-#rasnm46qjlkabl9bwf1%!tt@tu21'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [('localhost')]
+ALLOWED_HOSTS = [('localhost'), ('8080-fc9244b4-37f9-4bea-9f29-9053df3a6094.ws-eu01.gitpod.io')]
 
 
 # Application definition
@@ -149,8 +149,8 @@ MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
-MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
