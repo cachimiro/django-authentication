@@ -21,7 +21,7 @@ def create_or_edit_product(request, pk=None):
         form = ProductPostForm(request.POST, request.FILES, instance=Product)
         if form.is_valid():
             Product = form.save()
-            return redirect(all_products, Product.pk)
+            return redirect(all_products)
     else:
         form = ProductPostForm(instance=Product)
     return render(request, 'productform.html', {'form': form})
