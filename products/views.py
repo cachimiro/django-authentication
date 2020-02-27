@@ -16,7 +16,9 @@ def create_or_edit_product(request, pk=None):
     or edit a post depending if the Post ID
     is null or not
     """
+    from .models import Product
     Product = get_object_or_404(Product, pk=pk) if pk else None
+    
     if request.method == "POST":
         form = ProductPostForm(request.POST, request.FILES, instance=Product)
         if form.is_valid():
