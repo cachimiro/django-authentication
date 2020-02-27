@@ -34,6 +34,7 @@
 </div>
 </div>
 </div>
+{% if user.is_authenticated %}
 <div class="container">
 <div class="row">
 <div class="col-12">
@@ -43,6 +44,17 @@
 </div>
 </div>
 </div>
+ {% else %}
+ <div class="container">
+<div class="row">
+<div class="col-12">
+<div id="register">
+<p> Registrate para resibir 10% <span><a href="#">Productos</a></span>
+</div>
+</div>
+</div>
+</div>
+{% endif %}
 <div class="container">
 <div class="row">
 <div class="col-12">
