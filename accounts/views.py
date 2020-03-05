@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.shortcuts import render, redirect, HttpResponseRedirect, get_object_or_404
 from django.contrib import messages, auth
 from django.core.urlresolvers import reverse
 from .forms import UserLoginForm, UserRegistrationForm
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from .models import index_photo
+from .form import ProductPostForm
 
 
 # Create your views here.
@@ -75,6 +76,29 @@ def register(request):
 
     args = {'user_form': user_form}
     return render(request, 'register.html', args)
+
+
+
+def form_for_editing_index(request, pk=None):
+    """
+    Create a view that allows us to create
+    or edit a post depending if the Post ID
+    is null or not
+    """
+    from .models import index_photo
+    index = get_object_or_404(index_photo, pk=pk) if pk else None
+    
+    if request.method == "POST":
+        form = ProductPostForm(request.POST, request.FILES, instance=index)
+        if form.is_valid():
+            index_photo = form.save()
+            return redirect('index')
+    else:
+        form = ProductPostForm(instance=index_photo)
+    return render(request, 'index-form.html', {'form': form})
+
+
+
 
 
   
