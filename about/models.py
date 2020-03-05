@@ -8,5 +8,5 @@ class about(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to="media", blank=True, null=True)
 
-   def __unicode__(self):
+    def __unicode__(self):
         return self.title

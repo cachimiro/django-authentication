@@ -26,4 +26,4 @@ def edit_about(request, pk=None):
             return redirect(About)
     else:
         form = ProductAboutForm(instance=about)
-    return render(request, 'about_form.html', {'form': form})
+    return render(request, 'about-form.html', {'form': form})

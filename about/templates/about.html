@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+#style-title{
+    padding: 20px;
+}
+#style-paragraph{
+    padding: 20px;
+}
+</style>
 {% for about in abouts %}
 {% if request.user.is_superuser %}
 <a class="dropdown-item" href="{% url 'edit_about' about.id %}">editar inicio</a>
@@ -9,11 +17,11 @@
 <div class="container">
 <div class="row">
 <div class="col-sm-12 col-md-6 col-lg-5">
-<img src="{{ MEDIA_URL }}{{ about.image }}" style=" width:100%; height: 370px;  padding:20px;"/>
+<img src="{{ MEDIA_URL }}{{ about.image }}" style=" width:100%; height: 100%;  padding:20px;"/>
 </div>
 <div class="col-sm-12 col-md-6 col-lg-7">
-<h1>{{ about.Titulo }}</h1>
-<p>{{ about.description }}</p>
+<h1 id="style-title">{{ about.Titulo }}</h1>
+<p id="style-paragraph">{{ about.description }}</p>
 </div>
 </div>
 </div>
