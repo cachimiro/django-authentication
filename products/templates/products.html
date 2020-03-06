@@ -11,6 +11,8 @@
                 <p style=" margin:15px;">${{ product.price }}</p>
                 {% if request.user.is_superuser %}
                 <a href="{% url 'edit_product' product.id %}" class="btn btn-default">Editar Productos</a>
+                <a href="{% url 'remove_from_products' product.id %}" class="btn btn-default">Eliminar</a>
+               
                 {% else %}
                 {% endif %}
                 <form method="post" action="{% url 'add_to_cart' product.id %}" style=" margin:15px;">

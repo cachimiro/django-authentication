@@ -29,3 +29,8 @@ def create_or_edit_product(request, pk=None):
     else:
         form = ProductPostForm(instance=Product)
     return render(request, 'productform.html', {'form': form})
+
+
+def remove_from_products(request, pk=None):      
+    Product.objects.filter(id=pk).delete()
+    return redirect('all_products') 
