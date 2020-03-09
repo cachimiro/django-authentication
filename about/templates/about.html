@@ -11,7 +11,7 @@
 </style>
 {% for about in abouts %}
 {% if request.user.is_superuser %}
-<a class="dropdown-item" href="{% url 'edit_about' about.id %}">editar inicio</a>
+<a class="dropdown-item" href="{% url 'edit_about' about.id %}">editar pagina sobre nosostros</a>
 {% else %}
 {% endif %}
 <div class="container">
