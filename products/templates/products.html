@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-new_product
 <a href="{% url 'new_product' %}" class="btn btn-default">Agregar producto</a>
 <div class="row row-flex">
     {% for product in products %}
