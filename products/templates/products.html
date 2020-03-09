@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if request.user.is_superuser %}
 <a href="{% url 'new_product' %}" class="btn btn-default">Agregar producto</a>
+{% else %}
+{% endif %}
 <div class="row row-flex">
     {% for product in products %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
