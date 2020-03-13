@@ -7,6 +7,11 @@
      text-align: center;
      padding: 20px;
 }
+.mySlides {display:none;}
+.mySlide {display:none;}
+
+
+
 </style>
 {% for index_photo  in index_photos %}
 {% if request.user.is_superuser %}
@@ -23,10 +28,16 @@
 <div class="container">
 <div class="row">
 <div class="col-sm-12 col-md-6 col-lg-6">
-<img src="{{ MEDIA_URL }}{{ index_photo.image }}" style=" width:100%; height: 500px;"/>
+<img class="mySlides" src="{{ MEDIA_URL }}{{ index_photo.image }}" style=" width:100%; height: 500px;"/>
+ <img class="mySlides" src="{{ MEDIA_URL }}{{ index_photo.image_1 }}" style="width:100%; height: 500px;">
+  <img class="mySlides" src="{{ MEDIA_URL }}{{ index_photo.image_2 }}" style="width:100%; height: 500px;">
+  <img class="mySlides" src="{{ MEDIA_URL }}{{ index_photo.image_3 }}" style="width:100%; height: 500px;">
 </div>
 <div class="col-sm-12 col-md-6 col-lg-6">
-<img src="{{ MEDIA_URL }}{{ index_photo.images }}" style=" width:100%; height: 500px;"/>
+<img class="mySlide" src="{{ MEDIA_URL }}{{ index_photo.images }}" style=" width:100%; height: 500px;"/>
+<img class="mySlide" src="{{ MEDIA_URL }}{{ index_photo.images_1 }}" style=" width:100%; height: 500px;"/>
+<img class="mySlide" src="{{ MEDIA_URL }}{{ index_photo.images_2 }}" style=" width:100%; height: 500px;"/>
+<img class="mySlide" src="{{ MEDIA_URL }}{{ index_photo.images_3 }}" style=" width:100%; height: 500px;"/>
 </div>
 </div>
 <div id="style-images-index">
@@ -77,5 +88,36 @@
 </div>
 </div>
 </div>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+
+var myIndexs = 0;
+carousels();
+
+function carousels() {
+  var i;
+  var x = document.getElementsByClassName("mySlide");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndexs++;
+  if (myIndexs > x.length) {myIndexs = 1}    
+  x[myIndexs-1].style.display = "block";  
+  setTimeout(carousels, 3000); // Change image every 2 seconds
+}
+</script>
 
   {% endblock %}
