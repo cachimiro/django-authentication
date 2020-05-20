@@ -64,15 +64,26 @@ letter-spacing: 1px;
 }
 .mySlides {display:none;}
 .mySlide {display:none;}
+@media only screen and (max-width: 600px) {
+  #hide-img-when-small-screen {
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #image-display-in-small-screen img{
+    height: 400px !important;
+  }
+}
 /* code for styling the cards in the index page */
 #style-icons-on-index{
  margin: 10px;
 }
 .style-icons-index{
-    border: 1px solid #000;
     text-align: center;
     font-size: 40px;
     padding: 10px;
+    margin-top: 15px;
+
 }
 .style-icons-index h4{
   font-family: 'Ubuntu', sans-serif;  
@@ -85,5 +96,64 @@ letter-spacing: 1px;
   font-size:16px;
   text-align: justify;
 }
+/* code for styling the button */
+.style-icons-index button{
+     font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+    height: 40px;
+    background-color: #0ae6f78f;
+    border: none;
+    box-shadow: 5px 1px 16px 4px #17a2b8;
+    font-family: 'Ubuntu', sans-serif; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s ease-in-out;
+    font-weight: bold;
+}
+.style-icons-index button:hover{
+   box-shadow: 5px 1px 16px 4px #0a26f78f; 
+   background-color: #17a2b8;
+   border-radius: 0px;
+}
+/* code for the the 4 images at the bottom of index page */
+#style-for-images-at-the-bottom .col-6{
+    padding: 2px;
+}
+#style-for-images-at-the-bottom img{
+    transition: 0.5s ease-in-out;
+}
+#style-for-images-at-the-bottom img:hover{
+border-radius: 50%;
+box-shadow: 5px 1px 16px 4px purple; 
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-family: 'Ubuntu', sans-serif; 
+  font-weight: bold;
+  color: #fafafa;
+  text-transform: uppercase;
+}
+#img-background-colour{
+    background-color: #fafafa;
+}
+#style-for-images-at-the-bottom h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Ubuntu', sans-serif; 
+    font-size: 40px;
+    letter-spacing: 3px;
+    margin: 15px;
+    font-weight: bold;
+}
 
+@media only screen and (max-width: 600px) {
+  #style-for-images-at-the-bottom img {
+    height: 200px !important;
+  }
+}
 
