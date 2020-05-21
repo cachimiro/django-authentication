@@ -1,4 +1,5 @@
 from django.db import models
+import uuid
 
 # Create your models here.
 class Product(models.Model):
@@ -11,3 +12,7 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+def randon_id_generator():
+    uuid.uuid4()
+    return render(request,'products.html')

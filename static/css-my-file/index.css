@@ -22,9 +22,6 @@ height: 46px;
      margin-top: 50px;
      text-align: center;
  }
-  #map {
-            min-height: 360px;
-        }
 
 .product{
     margin: 20px;
@@ -56,10 +53,13 @@ letter-spacing: 1px;
 }
 /* code for the index page */
 #movecenter{
-     text-align: center;
-     padding: 20px;
-     text-transform: uppercase;
-     font-family: 'Ubuntu', sans-serif; 
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    letter-spacing: 3px
      
 }
 .mySlides {display:none;}
@@ -84,6 +84,12 @@ letter-spacing: 1px;
     padding: 10px;
     margin-top: 15px;
 
+}
+.style-icons-index button a{
+    color: #000;
+}
+.style-icons-index button a:hover{
+    text-decoration: none;
 }
 .style-icons-index h4{
   font-family: 'Ubuntu', sans-serif;  
@@ -155,5 +161,14 @@ box-shadow: 5px 1px 16px 4px purple;
   #style-for-images-at-the-bottom img {
     height: 200px !important;
   }
+}
+.style-for-images-at-the-bottom p a{
+    color: #fafafa;
+    transition: 0.5s ease-in-out;
+}
+.style-for-images-at-the-bottom p a:hover{
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: 'Crimson Text', serif;
 }
 
