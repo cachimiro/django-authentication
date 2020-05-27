@@ -2,24 +2,58 @@
 
 {% block content %}
 <style>
-
+#style-of-img-products img{
+    height: 270px;
+    width: 100%;
+}
+#style-of-img-products{
+    margin: 15px;
+}
+#style-product-description-reting-titlle h3{
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 10px;
+}
+#style-product-description-reting-titlle .description{
+    font-family: 'Ubuntu', sans-serif;
+    text-align: justify;
+    font-weight: 500;
+}
+#style-product-description-reting-titlle .rate{
+    font-family: 'Ubuntu', sans-serif;
+    text-align: right;
+    margin-top: 40px;
+    color: #f11350;
+    font-size: 20px;
+}
+#style-product-description-reting-titlle .price{
+   font-family: 'Ubuntu', sans-serif;
+    text-align: right;
+    margin-top: 90px;
+}
+#style-product-description-reting-titlle form{
+    width: 300px;
+}
 </style>
 {% if request.user.is_superuser %}
 <a href="{% url 'new_product' %}" class="btn btn-default">Agregar producto</a>
 {% else %}
 {% endif %}
-
+{% for product in products %}
 <div class="container">
 <div class="row">
-     {% for product in products %}
-     <div class="col-4">
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+     <div class="col-sm-12 col-md-4 col-lg-4">
+<div id="{{ product.name }}" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#{{ product.name }}" data-slide-to="0" class="active"></li>
+    <li data-target="#{{ product.name }}" data-slide-to="1"></li>
+    <li data-target="#{{ product.name }}" data-slide-to="2"></li>
   </ol>
-  <div class="carousel-inner">
+  <div class="carousel-inner" id="style-of-img-products">
     <div class="carousel-item active">
       <img class="d-block w-100" src="{{ MEDIA_URL }}{{ product.image }}" alt="First slide">
     </div>
@@ -30,18 +64,41 @@
       <img class="d-block w-100" src="{{ MEDIA_URL }}{{ product.image_2 }}" alt="Third slide">
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+  <a class="carousel-control-prev" href="#{{ product.name }}" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+  <a class="carousel-control-next" href="#{{ product.name }}" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
 </div>
 </div>
+<div class="col-sm-12 col-md-8 col-lg-8" id="style-product-description-reting-titlle">
+<h3>{{ product.name }}</h3>
+<p class="description">Lorem ipsum dolor sit amet, 
+consectetur adipisicing elit. Alias 
+dignissimos adipisci corrupti fuga
+ ipsa non a voluptate consectetur, omnis dolores.
+  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+   Fuga, dolorem tenetur dolor perferendis est aperiam rerum,
+    illum modi nam quam, id tempora! Nulla odio aperiam consequatur
+     excepturi quidem. Deleniti, animi.</p>
+ <p class="rate">1/10</p>
+ <p class="price">${{ product.price }}</p>
+ <form method="post" action="{% url 'add_to_cart' product.id %}" style=" margin:15px;">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input name="quantity" type="number" min="0" max="999" class="form-control" placeholder="How Muc do You Want">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">Agregar</button>
+                        </span>
+                    </div>
+                </form>
 </div>
 </div>
+</div>
+<hr>
 
      
      <!--
